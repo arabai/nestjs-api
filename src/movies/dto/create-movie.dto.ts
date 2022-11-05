@@ -1,5 +1,5 @@
 export class CreateMovieDto {
-    id:number;
+    name:string;
     plot:string;
     genres:number;
 }
