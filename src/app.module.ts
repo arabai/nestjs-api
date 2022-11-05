@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MoviesModule } from './movies/movies.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import config from './config/keys'
 
 @Module({
-  imports: [MoviesModule, MongooseModule.forRoot('mongodb+srv://arabai:8o4jI4v9lYkj9iBm@mflix-cluster.obaywlv.mongodb.net/?retryWrites=true&w=majority')],
+  imports: [MoviesModule, MongooseModule.forRoot(config.mongoURI)],
 })
 export class AppModule {}
