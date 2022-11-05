@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { MoviesController } from './movies/movies.controller';
-import { MoviesService } from './movies/movies.service';
 import { MoviesModule } from './movies/movies.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [MoviesModule],
+  imports: [MoviesModule, MongooseModule.forRoot('mongodb+srv://arabai:8o4jI4v9lYkj9iBm@mflix-cluster.obaywlv.mongodb.net/?retryWrites=true&w=majority')],
 })
 export class AppModule {}
